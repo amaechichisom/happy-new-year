@@ -114,7 +114,8 @@ section i:nth-child(even) {
     section {
         min-height: 100vh;
         max-height: max-content;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     section .box {
@@ -124,6 +125,25 @@ section i:nth-child(even) {
 
     section .box .circle div {
         font-size: 2em;
+    }
+    
+}
+
+@media screen and (max-width: 500px){
+    
+
+    section .box {
+        width: 200px;
+        height: 200px;
+    }
+
+    section .box .circle div {
+        font-size: 1.5em;
+    }
+
+    section .box::before {
+        width: 50%;
+        height: 100%;
     }
     
 }
