@@ -142,7 +142,7 @@ section i:nth-child(even) {
     }
 
     section .box::before {
-        width: 50%;
+        width: 60%;
         height: 100%;
     }
     
