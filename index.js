@@ -1,21 +1,29 @@
-const circles = document.querySelectorAll('.circle');
 
-circles.forEach((circle, idx) =>{
-    circle.style.borderWidth = (idx + 1) * 10 + 'px';
-    circle.style.zIndex = -idx;
-    circle.style.animationName = `rotate-${idx}`;
 
-    const deg = (idx + 1) * 360;
 
-    const style = document.createElement('style');
+function bubbles() {
+    var count = 200;
+    var section = document.querySelector('section');
 
-    style.innerHTML =  `
-        @keyframes rotate-${idx} {
-            to{
-                transform: translate(-50%, -50%) rotate(${deg}deg);
-            }
-        }
-    `;
+    var i = 0;
+    while (i < count) {
+        var bubble = document.createElement('i');
+        var x = Math.floor(Math.random() * window.innerWidth);
+        var y = Math.floor(Math.random() * window.innerHeight);
 
-    document.body.appendChild(style);
-})
+        var size = Math.random() * 10;
+        bubble.style.left = x + 'px';
+        bubble.style.top = y + 'px';
+        bubble.style.width = 1 + size + 'px'
+        bubble.style.height = 1 + size + 'px'
+
+        bubble.style.animationDuration = 5 + size + 's';
+        bubble.style.animationDelay = size + 's';
+
+        section.appendChild(bubble);
+        i++
+    }
+}
+
+bubbles()
+

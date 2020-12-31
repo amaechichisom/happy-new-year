@@ -18,8 +18,9 @@ section {
     align-items: center;
     min-height: 100vh;
     max-height: fit-content;
+    max-width: 100%;
     background: #f1f1f1;
-
+    overflow: hidden;
 }
 
 section .box {
@@ -102,7 +103,7 @@ section i:nth-child(even) {
         opacity: 1;
     }
     100% {
-        transform: translateY(-2000%) translateX(20em);
+        transform: translateY(-2000%) translateX(4em);
         opacity: 1;
     }
 
@@ -147,3 +148,113 @@ section i:nth-child(even) {
     }
     
 }
+
+.circle__group{
+    display:flex;
+    align-self: start;
+    margin-top: 80px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle-green{
+    width:1rem;
+    height:1rem;
+    border-radius: 50%;
+    border:2px solid #7dd71d ;
+    position: relative;
+    animation: beep linear infinite;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    margin-right: 60px;
+}
+.circle-green::before{
+    content: "";
+    width:2rem;
+    height:2rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border:2px solid #7dd71d ;
+}
+.circle-green::after{
+    content: "";
+    width:3rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border:2px solid #7dd71d ;
+}
+
+.circle-red{
+    width:1rem;
+    height:1rem;
+    border-radius: 50%;
+    border:2px solid #cc1034 ;
+    position: relative;
+    animation: beep linear infinite;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    
+}
+.circle-red::before{
+    content: "";
+    width:2rem;
+    height:2rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border:2px solid #cc1034 ;
+}
+.circle-red::after{
+    content: "";
+    width:3rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border:2px solid #cc1034 ;
+}
+@keyframes beep {
+    0%{
+        transform: scale(0);
+        border-width: 0px;
+        opacity: 0;
+    }
+
+    25% {
+        transform: scale(0.25);
+        border-width: 2px;
+        opacity: .25;
+    }
+
+    50% {
+        transform: scale(0.5);
+        border-width: 3px;
+        opacity: .50;
+    }
+
+    75% {
+        transform: scale(0.75);
+        border-width: 3px;
+        opacity: .5;
+    }
+
+    100% {
+        transform: scale(1);
+        border-width: 3px;
+        opacity: 0.5;
+    }
+
+}
+
+
